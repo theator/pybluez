@@ -2975,8 +2975,8 @@ PyMODINIT_FUNC
 init_bluetooth(void)
 #endif
 {
-    Py_TYPE(&sock_type) = &PyType_Type;
-    Py_TYPE(&sdp_session_type) = &PyType_Type;
+    Py_SET_TYPE(&sock_type, &PyType_Type);
+    Py_SET_TYPE(&sdp_session_type, &PyType_Type);
 #if PY_MAJOR_VERSION >= 3
     PyObject *m = PyModule_Create(&moduledef);
 #else
